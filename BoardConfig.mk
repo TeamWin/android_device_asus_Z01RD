@@ -59,10 +59,10 @@ BOARD_KERNEL_CMDLINE += androidboot.avb_version=0.0 androidboot.vbmeta.avb_versi
 BOARD_KERNEL_IMAGE_NAME := Image.gz-dtb
 NEED_KERNEL_MODULE_SYSTEM := true
 TARGET_KERNEL_ARCH := arm64
-TARGET_KERNEL_CONFIG := Z01R_defconfig
-TARGET_KERNEL_CROSS_COMPILE_PREFIX := aarch64-linux-android-
-TARGET_KERNEL_SOURCE := kernel/asus/sdm845
-#TARGET_PREBUILT_KERNEL := device/asus/ASUS_Z01RD/prebuilt/Image.gz-dtb
+#TARGET_KERNEL_CONFIG := Z01R_defconfig
+#TARGET_KERNEL_CROSS_COMPILE_PREFIX := aarch64-linux-android-
+#TARGET_KERNEL_SOURCE := kernel/asus/sdm845
+TARGET_PREBUILT_KERNEL := device/asus/ASUS_Z01RD/prebuilt/Image.gz-dtb
 
 # Platform
 TARGET_BOARD_PLATFORM := sdm845
