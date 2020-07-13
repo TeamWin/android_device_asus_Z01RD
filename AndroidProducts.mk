@@ -15,4 +15,4 @@
 #
 
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/omni_ASUS_Z01RD.mk
+    $(LOCAL_DIR)/omni_Z01RD.mk

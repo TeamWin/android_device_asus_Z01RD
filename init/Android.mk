@@ -22,7 +22,7 @@ LOCAL_MODULE_TAGS := optional
 LOCAL_C_INCLUDES := \
     system/core/base/include \
     system/core/init
-LOCAL_SRC_FILES := init_ASUS_Z01RD.cpp
-LOCAL_MODULE := libinit_ASUS_Z01RD
+LOCAL_SRC_FILES := init_Z01RD.cpp
+LOCAL_MODULE := libinit_Z01RD
 
 include $(BUILD_STATIC_LIBRARY)
