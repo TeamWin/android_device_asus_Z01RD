@@ -1,4 +1,4 @@
-# mount point   fstype device                                  device2                              flags
+# mount point   fstype  device                  device2          flags
 /boot            emmc	/dev/block/bootdevice/by-name/boot       flags=slotselect
 /dtbo            emmc   /dev/block/bootdevice/by-name/dtbo       flags=display="DTBO";backup=1;slotselect
 /system          ext4	/dev/block/bootdevice/by-name/system	 flags=display="System";slotselect
@@ -19,7 +19,9 @@
 /efsc            emmc   /dev/block/bootdevice/by-name/fsc        flags=backup=1;subpartitionof=/efs1
 /efsg            emmc   /dev/block/bootdevice/by-name/fsg        flags=backup=1;subpartitionof=/efs1
 
-/asdf            ext4   /dev/block/bootdevice/by-name/asdf       flags=display="ASDF";backup=1
+/ADF             ext4   /dev/block/bootdevice/by-name/ADF        flags=display="ADF";backup=1
+/APD             ext4   /dev/block/bootdevice/by-name/APD        flags=display="APD";mounttodecrypt;backup=1
+/asdf            ext4   /dev/block/bootdevice/by-name/asdf       flags=display="ASDF";mounttodecrypt;backup=1
 /factory         ext4   /dev/block/bootdevice/by-name/factory    flags=display="Factory";backup=1
 /dsp             ext4   /dev/block/bootdevice/by-name/dsp        flags=display="DSP";backup=1
 
