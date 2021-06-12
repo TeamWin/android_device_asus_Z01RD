@@ -3,10 +3,7 @@
 /dtbo            emmc   /dev/block/bootdevice/by-name/dtbo       flags=display="DTBO";backup=1;slotselect
 /system          ext4	/dev/block/bootdevice/by-name/system	 flags=display="System";slotselect
 /vendor          ext4   /dev/block/bootdevice/by-name/vendor     flags=display="Vendor";slotselect
-
-/system_image	 emmc   /dev/block/bootdevice/by-name/system     flags=slotselect;flashimg=1
-/vendor_image    emmc   /dev/block/bootdevice/by-name/vendor     flags=slotselect;backup=1;flashimg=1
-/persist_image	 emmc 	/dev/block/bootdevice/by-name/persist 	 flags=display="Persist";backup=1;flashimg=1
+/persist         ext4   /dev/block/bootdevice/by-name/persist    flags=display="Persist";backup=1
 
 /data            ext4   /dev/block/bootdevice/by-name/userdata   flags=fileencryption=ice;encryptable=footer
 /firmware        vfat   /dev/block/bootdevice/by-name/modem      flags=slotselect;display="Firmware";mounttodecrypt;fsflags=ro
