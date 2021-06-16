@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "83157f94_578681ca",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 28
+      },
+      "writtenOn": "2021-06-16T02:55:57Z",
+      "side": 1,
+      "message": "merged the commit on LineageOS/android_kernel_asus_sdm845 and merging it for TWRP too",
+      "revId": "9af4749896e889f76d906a80fcc6d816385815d6",
+      "serverId": "9c1c7d72-6534-4d44-b0ea-39f63e804833"
+    }
+  ]
+}
