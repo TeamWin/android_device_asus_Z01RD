@@ -43,7 +43,7 @@ ENABLE_CPUSETS := true
 ENABLE_SCHEDBOOST := true
 
 # Bootloader
-TARGET_BOOTLOADER_BOARD_NAME := sdm845
+TARGET_BOOTLOADER_BOARD_NAME := $(PRODUCT_PLATFORM)
 TARGET_NO_BOOTLOADER := true
 
 # Kernel
@@ -51,8 +51,6 @@ BOARD_KERNEL_BASE := 0x00000000
 BOARD_KERNEL_PAGESIZE := 4096
 BOARD_KERNEL_TAGS_OFFSET := 0x00000100
 BOARD_RAMDISK_OFFSET     := 0x01000000
-BOARD_ROOT_EXTRA_FOLDERS := firmware bt_firmware dsp persist
-BOARD_ROOT_EXTRA_SYMLINKS := /vendor/xrom:/xrom /vendor/ADF:/ADF /vendor/APD:/APD /vendor/asdf:asdf /vendor/factory:factory
 BOARD_KERNEL_CMDLINE :=  \
     console=ttyMSM0,115200n8 \
     earlycon=msm_geni_serial,0xA84000 \
@@ -79,13 +77,15 @@ TARGET_PREBUILT_KERNEL := $(DEVICE_PATH)/prebuilt/$(BOARD_KERNEL_IMAGE_NAME)
 ifeq ($(TARGET_PREBUILT_KERNEL),)
   TARGET_KERNEL_CONFIG := Z01R_defconfig
   TARGET_KERNEL_CROSS_COMPILE_PREFIX := aarch64-linux-android-
-  TARGET_KERNEL_SOURCE := kernel/asus/sdm845
+  TARGET_KERNEL_SOURCE := kernel/asus/$(PRODUCT_PLATFORM)
 endif
 
 # Platform
-TARGET_BOARD_PLATFORM := sdm845
+TARGET_BOARD_PLATFORM := $(PRODUCT_PLATFORM)
 TARGET_BOARD_PLATFORM_GPU := qcom-adreno630
 TARGET_SUPPORTS_64_BIT_APPS := true
+TARGET_USES_HARDWARE_QCOM_BOOTCTRL := true
+QCOM_BOARD_PLATFORMS += $(TARGET_BOARD_PLATFORM)
 
 # Partitions
 BOARD_FLASH_BLOCK_SIZE := 262144
@@ -101,9 +101,20 @@ BOARD_USERDATAIMAGE_FILE_SYSTEM_TYPE := ext4
 BOARD_VENDORIMAGE_FILE_SYSTEM_TYPE := ext4
 TARGET_USERIMAGES_USE_F2FS := true
 TARGET_USERIMAGES_USE_EXT4 := true
+
+BOARD_ROOT_EXTRA_FOLDERS := ADF \
+                            APD \
+                            asdf \
+                            bt_firmware \
+                            dsp \
+                            factory \
+                            firmware \
+                            persist \
+                            xrom
+
 TARGET_RECOVERY_DEVICE_MODULES += \
     android.hidl.base@1.0 \
-    android.hardware.boot@1.0 \
+    bootctrl.$(TARGET_BOARD_PLATFORM) \
     ashmemd \
     ashmemd_aidl_interface-cpp \
     libashmemd_client \
