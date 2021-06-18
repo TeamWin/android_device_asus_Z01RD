@@ -8,7 +8,7 @@
 /vendor_image    emmc   /dev/block/bootdevice/by-name/vendor     flags=slotselect;backup=1;flashimg=1
 /persist_image	 emmc 	/dev/block/bootdevice/by-name/persist 	 flags=display="Persist";backup=1;flashimg=1
 
-/data            ext4   /dev/block/bootdevice/by-name/userdata   flags=fileencryption=ice;encryptable=footer
+/data            ext4   /dev/block/bootdevice/by-name/userdata   flags=fileencryption=ice
 /firmware        vfat   /dev/block/bootdevice/by-name/modem      flags=slotselect;display="Firmware";mounttodecrypt;fsflags=ro
 /misc            emmc   /dev/block/bootdevice/by-name/misc
 /modem           emmc   /dev/block/bootdevice/by-name/modem      flags=slotselect;backup=1;display="Modem"
@@ -26,5 +26,5 @@
 /dsp             ext4   /dev/block/bootdevice/by-name/dsp        flags=display="DSP";backup=1
 
 # Removable storage
-/external_sd	 vfat	/dev/block/mmcblk0p1	/dev/block/mmcblk0	flags=storage;wipeingui;removable;encryptable=footer
+/external_sd	 vfat	/dev/block/mmcblk0p1	/dev/block/mmcblk0	flags=storage;wipeingui;removable;encryptable=userdata
 /usb_otg         vfat   /dev/block/sdg1         /dev/block/sdg flags=storage;wipeingui;removable
