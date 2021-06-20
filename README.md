@@ -29,7 +29,7 @@ Asus Zenfone 5z was announced and released in June 2018.
 ## Kernel
 
 Prebuilt kernel source:
-https://github.com/5z-devs/android_kernel_asus_sdm845
+https://github.com/5z-devs/android_kernel_asus_sdm845/commits/ed6c0fddc76661961b87ca9acabc96213bc197a3
 
 ## Compile
 
